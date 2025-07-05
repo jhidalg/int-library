@@ -1,13 +1,11 @@
 # int-library
 
-This is a custom local library that lets you prompt a user for integer input in C.
+This is a custom local library that contains the function ```get_int```, which allows you to prompt a user for integer input in C.
 <details>
 
-<summary>What Does it Look Like?</summary>
+<summary>Example of get_int in C</summary>
 
-### 
-
-Using this library, you can access the get_int function. Here's what it looks like in a program:
+### Ex: Prompt User to Type an Integer
 
 ```c
    #include "int.h"
@@ -29,14 +27,33 @@ Output:
 
 </details>
 
+<details>
+<summary>Key Features of get_int</summary>
+
+###
+- Rejects invalid integer input (e.g strings)
+- Reprompts user until there's a valid integer input
+
+Examples of what ```get_int``` doesn't accept:
+``` bash
+   $ Type an integer: abc23           # Involving alphabetical characters
+   $ Type an integer: 12bre
+   $ Type an integer: Hello
+   $ Type an integer:                 # Nothing inputted
+   $ Type an integer: 2 4             # Separated integers
+```
+</details>
+
 # Usage
 1. On this GitHub page, click the "Code" button and select "Download ZIP"
-2. Unzip the downloaded folder
-3. Move int-library into the same directory your C file is in
+
+2. Unzip the downloaded library folder ```int-library-main```
+   
+3. Move ```int-library-main``` into the same directory your C file is in
    
 ```mermaid ruby
 graph TD;
-    A(project_folder)-->B(your_program.c);
+    A(project_directory)-->B(your_program.c);
     A-->C(int-library-main/);
     C-->D(src/);
     D-->int.c;
@@ -44,12 +61,12 @@ graph TD;
 ```
 
 4. In your project folder, open a terminal and run the following:
-```ruby
-clang -I int-library/src -o your_program your_program.c int-library/src/int.c
+```bash
+clang -I int-library-main/src -o your_program your_program.c int-library-main/src/int.c
 ```
    
-5. All set! Now you can run you program
-```ruby
+5. All set! Now you can run your program
+```bash
 ./your_program
 ```
    
