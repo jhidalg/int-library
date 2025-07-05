@@ -1,34 +1,46 @@
 # int-library
+
+This is a custom local library that lets you prompt a user for integer input in C.
 <details>
 
-<summary>Tips for collapsed sections</summary>
+<summary>What Does it Look Like?</summary>
 
-### You can add a header
+### 
 
-You can add text within a collapsed section.
+Using this library, you can access the get_int function. Here's what it looks like in a program:
 
-You can add an image or a code block, too.
+```c
+   #include "int.h"
+   #include <stdio.h>
 
-```ruby
-   puts "Hello World"
+   int main()
+   {
+      int n = get_int("Type an integer: ");
+      printf("Your integer is: %i\n", n);
+   }
+```
+
+Output:
+```bash
+   $ ./your_program
+   $ Type an integer: 2
+     Your integer is: 2
 ```
 
 </details>
-This is a custom local library that lets you prompt a user for integer input in C.
 
 # Usage
 1. On this GitHub page, click the "Code" button and select "Download ZIP"
 2. Unzip the downloaded folder
 3. Move int-library into the same directory your C file is in
    
-## Example:
 ```mermaid ruby
 graph TD;
-    project_folder-->your_program.c;
-    project_folder-->int-library-main/;
-    int-library-main/-->src/;
-    src/-->int.c;
-    src/-->int.h;
+    A(project_folder)-->B(your_program.c);
+    A-->C(int-library-main/);
+    C-->D(src/);
+    D-->int.c;
+    D-->int.h;
 ```
 
 4. In your project folder, open a terminal and run the following:
